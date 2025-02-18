@@ -1,3 +1,6 @@
+import { parsePdf } from "@/utils/file-parser";
+
+
 export async function getAllFiles() {
   const files = [
     {
@@ -11,4 +14,8 @@ export async function getAllFiles() {
   ];
 
   return files;
+}
+
+export async function addFile(pdfFile: Express.Multer.File) {
+  parsePdf(pdfFile.buffer);
 }
